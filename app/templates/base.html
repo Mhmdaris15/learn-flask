@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %} - FlaskApp</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+      nav {
+        background-color: #ffcc00;
+        padding: 10px;
+        text-align: center;
+      }
+      nav a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #fff;
+      }
+      .content {
+        padding: 20px;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('main.index') }}">FlaskApp</a>
+      <a href="{{ url_for('posts.index') }}">Posts</a>
+      <a href="{{ url_for('posts.categories') }}">Categories</a>
+      <a href="{{ url_for('questions.index') }}">Questions</a>
+    </nav>
+    <hr />
+    <div class="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>
